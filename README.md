@@ -15,4 +15,6 @@ axis_n = vector of labels
 
 plot_3d(x,y,z, groups, truth, axis_n)
 ```
-[In this example the result of mclust model based clustering gets plotted, and misclassificated instances are shown as squares (made on Wine dataset)](https://media.giphy.com/media/7Cz66Ye37pYAdck7ID/giphy.gif)
+
+![In this example the result of mclust model based clustering gets plotted, and misclassificated instances are shown as squares (made on Wine dataset)
+](ex.gif)
