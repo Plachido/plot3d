@@ -17,4 +17,4 @@ In the following example the result of mclust model based clustering gets plotte
   
 ![](ex.gif)
 
-<b>NOTE:</b> no axis labels have been insered or this example.
+<b>NOTE:</b> no axis labels have been insered on this example.
