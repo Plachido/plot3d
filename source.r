@@ -9,7 +9,7 @@ require(magick)
 #truth is the ground truth, used to plot misclassified points.
 #axis_n contains the lables of the three axis.
 
-plot_3d<-function(x,y,z,groups=1,truth=groups, axis_n=c("x","y","z"), spin = 0){
+plot_3d<-function(x,y,z,groups=1,truth=groups, axis_n=c("x","y","z"), spin = TRUE){
   rgl_init <- function(new.device = FALSE, bg = "white", width = 640) {
     if( new.device | rgl.cur() == 0 ) {
       rgl.open()
@@ -70,7 +70,7 @@ plot_3d<-function(x,y,z,groups=1,truth=groups, axis_n=c("x","y","z"), spin = 0){
             col= ellipse_col[i], cex = 1)
   }
   aspect3d(1,1,1)
-  if (spin != 0)
+  if (spin)
   {
     movie3d(spin3d(axis = c(0, 1, 0)), duration = 10,
             dir = getwd())
