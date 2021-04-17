@@ -1,7 +1,15 @@
-library(rgl)
-library(magick)
+require(rgl)
+require(magick)
 
-plot_3d<-function(x,y,z,groups=1,truth=groups, axis_n=c("x","y","z")){
+#Main and only function
+#
+#This function shows an animation of a 3d plot.
+#x,y,z are the three axis.
+#groups is a vector containing the cluster each instance is in.
+#truth is the ground truth, used to plot misclassified points.
+#axis_n contains the lables of the three axis.
+
+plot_3d<-function(x,y,z,groups=1,truth=groups, axis_n=c("x","y","z"), spin = 0){
   rgl_init <- function(new.device = FALSE, bg = "white", width = 640) {
     if( new.device | rgl.cur() == 0 ) {
       rgl.open()
@@ -62,6 +70,9 @@ plot_3d<-function(x,y,z,groups=1,truth=groups, axis_n=c("x","y","z")){
             col= ellipse_col[i], cex = 1)
   }
   aspect3d(1,1,1)
-  movie3d(spin3d(axis = c(0, 1, 0)), duration = 10,
-          dir = getwd())
+  if (spin != 0)
+  {
+    movie3d(spin3d(axis = c(0, 1, 0)), duration = 10,
+            dir = getwd())
+  }
 }
