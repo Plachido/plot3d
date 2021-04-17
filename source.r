@@ -1,5 +1,4 @@
 require(rgl)
-require(magick)
 
 #Main and only function
 #
@@ -72,6 +71,7 @@ plot_3d<-function(x,y,z,groups=1,truth=groups, axis_n=c("x","y","z"), spin = TRU
   aspect3d(1,1,1)
   if (spin)
   {
+    require(magick)
     movie3d(spin3d(axis = c(0, 1, 0)), duration = 10,
             dir = getwd())
   }
